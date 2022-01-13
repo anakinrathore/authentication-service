@@ -1,0 +1,19 @@
+syntax = "proto3";
+package proto_buffers;
+
+option go_package = "github.com/auth-service/proto_buffers/";
+
+message VerifyPhoneNumberData {
+	string phoneNumber = 1;
+	string otp = 2;
+	string flow = 3;
+}
+
+message VerifyPhoneNumberResponse {
+	string status = 1;
+}
+
+service UserVerifyService {
+	rpc VerifyUser(VerifyPhoneNumberData) returns(VerifyPhoneNumberResponse) {}
+}
+
