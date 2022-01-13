@@ -1,0 +1,15 @@
+syntax = "proto3";
+package proto_buffers;
+
+option go_package = "github.com/auth-service/proto_buffers/";
+message LoginData {
+	string phoneNumber = 1;
+}
+
+message LoginResponse {
+	string status = 1;
+}
+
+service LoginService {
+	rpc LoginUser(LoginData) returns(LoginResponse) {}
+}
